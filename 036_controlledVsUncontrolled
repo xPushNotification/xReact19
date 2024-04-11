@@ -1,0 +1,32 @@
+[контролируемый - стейты]
+const Controlled = () => {
+  const [inputValue, setInputValue] = useState("")
+  const handleInputChange = (e) => {
+    setInputChange(e.target.value)
+  }
+  return (
+    <div>
+    <input type="text" value={inputValue}
+    onChange={handleInputChange} placeholder="...">
+    <p>{inputValue}</p>
+    </div>
+  )
+}
+export default Controlled
+
+[не контролируемый - ref ссылки на хтмл объекты]
+const Uncontrolled = () => {
+  const inputRef = useRef(null)
+  const handleClick = () => {
+    const value = inputRef.current.value
+    console.log(`you typed ${value}`)
+  }
+  return (
+    <div>
+      <input type="text" ref={inputRef}
+      placeholder="...">
+      <button onClick={handleClick}>..</button>
+    </div>
+  )
+}
+export default Uncontrolled

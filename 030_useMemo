@@ -1,0 +1,15 @@
+import React, {useMemo} from "react"
+
+const UseMemo = ({data}) => {
+  const processedData = useMemo(()=>{
+  <- здесь тяжелые вычисления
+  return processData(data)
+  },[data])
+
+  return (
+    <div>
+    {processedData}
+    </div>
+  )
+}
+export default UseMemo

@@ -1,0 +1,24 @@
+через:
+1. React.lazy() для импорта
+2. Suspense обертка для заглушки в загрузке
+
+[CodeSplit.js]
+const CodeSplit = () => {
+ return <div>...</div>
+}
+export default CodeSplit
+
+[App.js]
+import React, {lazy,Suspence} from "react"
+const CodeSplit = lazy(() => import("./Others/CodeSplit"))
+function App() {
+ return (
+  <div>
+  <Suspence fallback={<div>Loading..</div>}>
+   <CodeSplit/>
+  </Suspence>
+  </div>
+ )
+}
+export default App
+

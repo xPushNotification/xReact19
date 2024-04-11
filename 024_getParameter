@@ -1,0 +1,24 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Routes, useParams } from 'react-router-dom';
+
+// Компонент, который будет отображаться при переходе по маршруту с параметром id
+function Product() {
+ // Получение параметра id
+ const { id } = useParams();
+ return <h2>Продукт с ID: {id}</h2>;
+}
+
+// Основной компонент приложения
+function App() {
+ return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<h2>Главная</h2>} />
+        <Route path="/product/:id" element={<Product />} />
+      </Routes>
+    </Router>
+ );
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));

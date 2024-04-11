@@ -1,0 +1,10 @@
+class CompleteClassComponent extends Component{
+  constructor(props){}
+  render(){}
+  componentDidMount(){}
+  <- обновляется в доме
+  componentDidUpdate(prevProps, prevState){}
+  <- по сути деструктор для компонента
+  componentWillUnmoun()
+}
+

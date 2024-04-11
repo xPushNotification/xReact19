@@ -1,0 +1,79 @@
+npm install react-router-dom
+
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link, Outlet } from 'react-router-dom';
+import ZoneAComponent from './ZoneAComponent';
+import ZoneBComponent from './ZoneBComponent';
+
+function App() {
+ return (
+    <Router>
+      <nav>
+        <Link to="/zoneA">Зона A</Link>
+        <Link to="/zoneB">Зона B</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/zoneA/*" element={<ZoneAComponent />}>
+          <Route index element={<ZoneAHome />} />
+          <Route path="profile" element={<ZoneAProfile />} />
+        </Route>
+        <Route path="/zoneB/*" element={<ZoneBComponent />}>
+          <Route index element={<ZoneBHome />} />
+          <Route path="profile" element={<ZoneBProfile />} />
+        </Route>
+      </Routes>
+    </Router>
+ );
+}
+
+function ZoneAComponent() {
+ return (
+    <div>
+      <h2>Зона A</h2>
+      <nav>
+        <Link to="profile">Профиль</Link>
+      </nav>
+      <Outlet />
+    </div>
+ );
+}
+
+function ZoneBComponent() {
+ return (
+    <div>
+      <h2>Зона B</h2>
+      <nav>
+        <Link to="profile">Профиль</Link>
+      </nav>
+      <Outlet />
+    </div>
+ );
+}
+
+export default App;
+
+
+В контексте двухзонального роутинга,
+где каждая зона имеет свой собственный роутинг,
+и используется компонент Outlet для рендеринга
+дочерних маршрутов внутри родительских компонентов,
+переходы внутри одной зоны не затрагивают состояние
+другой зоны.
+
+То есть, если в зоне A отображается определенный
+контент, и вы переходите по ссылке в зоне B,
+контент зоны B обновляется, а контент в зоне
+A остается тем же. Это достигается благодаря
+тому, что каждая зона управляет своим собственным
+состоянием и рендерингом дочерних маршрутов
+с помощью Outlet, что позволяет изолировать логику
+и состояние каждой зоны друг от друга.
+
+Пример кода, демонстрирующий такой подход,
+был представлен в предыдущем ответе. В нем
+ZoneAComponent и ZoneBComponent являются
+родительскими компонентами, которые используют
+Outlet для рендеринга дочерних маршрутов внутри
+себя. Таким образом, переходы внутри одной зоны
+не влияют на состояние и отображение другой зоны

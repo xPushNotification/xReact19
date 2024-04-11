@@ -1,0 +1,41 @@
+- исключает необходимость
+  переустановки функции
+  при каждой перерисовке
+
+[UseCallbackChild.js]
+const UseCallbackChild = ({onIncrement}) => {
+  return (
+    <div>
+      <button onClick={onIncrement}>+</button>
+    </div>
+  )
+}
+
+[UseCallbackParent.js]
+const UseCallbackParent = () => {
+  const [count, setCount] = useState(0)
+
+  -------------------------------------
+  без useCalback
+  ---
+  const handleIncrement = () => {
+        setCount(count+1)
+  }
+
+  -------------------------------------
+  useCalback
+  ---
+  const handleIncrement = useCallback(()=>{
+    setCount(count+1)
+    <- переустановит функцию при
+       изменении count
+  },[count])
+
+  return (
+   <div>
+     <p>{count}</p>
+     <UseCallbackChild onIncrement={handleIncrement}/>
+   </div>
+  )
+
+}

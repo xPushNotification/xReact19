@@ -1,0 +1,30 @@
+const Parent = () => {
+  // callback:
+  const callback = (data) => {
+    console.log("data from child:", data)
+  }
+
+  return (
+    <div>
+     <- даем child компоненту коллбек
+     <ChildComponent fromChild={callback}>
+    </div>
+  )
+}
+
+export default Parent
+
+-------
+const ChildComponent = ({fromChild}) => {
+  const dataToParent = () => {
+   <- вызываем коллбек переданный при создании
+   fromChild(document.getElementById("..").value)
+  }
+  return (
+    <div>
+      <input type="text" id="inputField"/>
+      <button onClick={dataToParent}>..</button>
+    </div>
+  )
+}
+export default ChildComponent

@@ -1,0 +1,34 @@
+рисуется синхронно в отличае от useEffect
+семантически и в оформлении аналогичен useEffect
+
+[UseLayoutEffect.js]
+function UseLayoutEffect() {
+  const [data,setData] = useState(0)
+
+  useLayoutEffect(()=>{
+    ..
+    const result = awayt response.json()
+    setData(result)
+    ---
+    const element = document.getElemementById("el")
+    if(element && result && result.title){
+      element.style.fontWeight = "bold"
+    }
+  }, [])
+
+  return (
+    <div>
+      {data.title}
+    </div>
+  )
+}
+
+хук позволяет управлять последовательностью
+например здесь элемент станет болдом
+после фетча - так как все синхронно
+
+return (
+  <div id="el">
+    <- изменит стиль только после получения данных
+  </div>
+)

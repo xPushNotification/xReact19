@@ -1,0 +1,19 @@
+const UseEffectCondition = () => {
+   const [shouldRunEffect, setShouldRunEffect] =
+     useState(true)
+
+   useEffect(()=>{
+     if(shouldRunEffect){
+       console.log("run!")
+     }
+   },[shouldRunEffect])
+
+   return (
+     <button onClick=
+     <- обратите внимание на вставку
+        и вызов стрелочной функции
+        по нажатию (мы не задает доп. функции)
+     {()=>setShouldRunEffect(!shouldRunEffect)}>
+   )
+}
+export default UseEffectCondition

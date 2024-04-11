@@ -1,0 +1,22 @@
+import React, {useRef} from "react"
+
+const UseRef = () => {
+  <- создаем ссылку на объект хтмл
+     идентифицироваться будет по имени
+  const inputRef = useRef()
+
+  <- здесь можно управлять
+     хтмл элементов как хтмл объектом
+  const focusInput = () => {
+    inputRef.current.focus()
+  }
+
+  return (
+    <div>
+                  <- вот это имя
+      <input ref={inputRef} type="text">
+      <button onClick={focusInput}>--</button>
+    </div>
+  )
+}
+export default UseRef

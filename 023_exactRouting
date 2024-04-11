@@ -1,0 +1,6 @@
+- роутинг распространяется на все что стоит после
+-- "about" "/about/team", "/about/contact" etc.
+<Route path="/about" component={About}/>
+
+- только "/about"
+<Route path="/about" exact component={About}>

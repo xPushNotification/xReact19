@@ -1,0 +1,53 @@
+import React, {useEffect} from "react"
+
+function UseEffect(){
+  useEffect(()=>{
+    <- здесь чтото делаем
+  },[
+    <- здесь перечисляем от каких объектов зависим
+       если пусто вызовится один раз при создании
+       компонента (прилод)
+    <- так как зависимость от объектов
+       что бы показать что объект изменен
+       его надо заменить
+       НЕ добавить элемент в массив
+       а ЗАМЕНИТЬ весь массив расширенным
+  ])
+
+  return (
+    <div></div>
+  )
+}
+
+---------------
+пример работы с зависимостями:
+---------------
+const UseEffectDependencies = () = > {
+   const [data, setData] = useState(null)
+   const [userId, setUserId] = useState(1)
+
+   useEffect(()=> {
+      const ...
+      setData(result)
+      <- как только значение изменилось перезапрос
+         и переустановка стейта result
+   }, [userId])
+}
+
+...
+return (
+  <input type="number"
+    value={userId}
+    onChange=
+    <- здесь изменяется значение
+    {(e) => setUserId(Number(e.target.value))}
+  >
+  {
+    data && (
+     <div>
+     <pre>{JSON.stringify(data,null,2)}</pre>
+     </div>
+    )
+  }
+)
+export default UseEffectDependencies

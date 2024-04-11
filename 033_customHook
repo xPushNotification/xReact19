@@ -1,0 +1,28 @@
+custom hook - функция
+с вложенными в неё хуками от реакта
+служит для упрощения кода
+
+[useCustomHooks.js]
+const useCustomHook = (initialValue = 0) => {
+  <- все из компонента переехало сюда
+  const [count,setCount] = useState(initialValue)
+  const increment = ()=> setCount(count+1)
+  const decrement = ()=> setCount(count-1)
+
+  return {count,increment,decrement}
+}
+export default useCustomHook
+
+[UseCustomHookUse.js]
+const UseCustomHookUse = () => {
+  const {count,increment,decrement} = useCustomHook()
+
+  return (
+    <div>
+      <p>{count}</p>
+      <button onClick={increment}>..</button>
+      <button onClick={decrement}>..</button>
+    </div>
+  )
+}
+export default UseCustomHookUse
