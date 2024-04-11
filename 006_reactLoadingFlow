@@ -1,0 +1,7 @@
+index.html <- declare root element
+->
+index.js <- replace root element with App
+->
+App.js <- root component
+->
+ChildComponent.js <- declare child components

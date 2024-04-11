@@ -1,0 +1,11 @@
+function App(){
+  const numbers = [1,2,3]
+  return (
+     <>
+     <- внимание на переход в js
+     {
+       numbers.map((el) => {<div>{el}</div>})
+     }
+     </>
+  )
+}

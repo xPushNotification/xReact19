@@ -1,0 +1,23 @@
+// if/else
+function MyComponent(){
+  if(2>1) return <div></div>
+}
+
+// trenary
+function MyComponent(){
+  return 2>1 ? <div></div> : <div></div>
+}
+
+// && operator
+function MyComponent(){
+  return 2>1 && <div></div>
+}
+
+// switch
+function MyComponent(){
+   const value = 2
+   switch(value){
+     case 2: return <div></div>
+     default: return null
+   }
+}

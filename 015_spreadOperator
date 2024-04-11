@@ -1,0 +1,10 @@
+function App(){
+   const props = {name:"happy",purpose:"some}
+   return (
+    <ChildComponent {...props}>
+   )
+}
+
+function ChildComponent(props){
+   return <div>{props.name},{props.purpose}</div>
+}

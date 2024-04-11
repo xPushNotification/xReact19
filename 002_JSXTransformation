@@ -1,0 +1,19 @@
+- оригинал:
+function App(){
+  <div className="App">
+       <h1>hello</h1>
+       <p>happy</p>
+  </div>
+}
+
+- преобразуется в:
+
+function App(){
+   return React.createElement(
+   "div",
+   {className: "App"},
+   React.createElement("h1",null,"hello"),
+   React.createElement("p", null, "happy)
+   )
+
+}

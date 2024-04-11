@@ -1,0 +1,11 @@
+function App(){
+    return (
+    <>
+      <ChildComponent name="happy" purpose="some"/>
+    </>
+   )
+}}
+
+function ChildComponent(props){
+   return <div>{props.name}, {props.purpose}</div>
+}

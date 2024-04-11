@@ -1,0 +1,21 @@
+<- в jsx не будет работать возврат
+   нескольких компонентов
+
+   return (
+    <div>first</div>
+    <div>second</div>
+   )
+
+<- включаем в фрагмент
+
+   return (
+   <>
+      <div>first</div>
+      <div>second</div>
+   </>
+   )
+
+   -или так-
+   <Fragment>
+   ..
+   </Fragment>

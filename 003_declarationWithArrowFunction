@@ -1,0 +1,19 @@
+// обычная декларация:
+function AppFunc(props){
+ return (
+        <div>
+        <h1>{props.name}</h1>
+        </div>
+ )
+}
+export default AppFunc
+
+// с помощью стрелочной функции
+const ArrowFunc = (props) => {
+ return (
+        <div>
+        <h1>{props.name}</h1>
+        </div>
+ )
+}
+export default ArrowFunc

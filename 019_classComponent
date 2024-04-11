@@ -1,0 +1,21 @@
+import React, {Component} from "react"
+
+class AppClass extends Component{
+  render(){
+    const dataToSend = "hello"
+    return (<div>
+      <ChildComponent message={dataToSend}>
+    </div>)
+  }
+}
+
+class ChildComponent extends Component{
+  render(){
+    return (
+       <div>
+       {this.props.message}
+       </div>
+    )
+  }
+}
+export default ChildComponent

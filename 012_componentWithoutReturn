@@ -1,0 +1,5 @@
+const FuncWithoutReturn = () => {
+   console.log("no return")
+}
+
+export default FuncWithoutReturn

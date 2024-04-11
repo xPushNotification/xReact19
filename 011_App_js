@@ -1,0 +1,11 @@
+import AppChild from "./Others/AppChild"
+
+function App(){
+   return (
+      <div>
+      <AppChild></AppChild>
+      </div>
+   )
+}
+
+export default App

@@ -1,0 +1,22 @@
+import React from "react"
+
+[AppChild.js]
+const AppChild = (props) => {
+   return <h1>Hello, {props.name}</h1>
+}
+export default AppChild
+
+[App.js]
+<- нет расширения .js
+import AppChild from "./Others/AppChild"
+
+function App(){
+   return (
+      <div>
+           <- здесь могут быть вложенные компоненты
+           <AppChild></AppChild>
+           <AppChild/>
+      </div>
+   )
+}
+export default App

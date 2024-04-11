@@ -1,0 +1,16 @@
+// 1. import the react library
+import React from "react"
+
+// 2. define a functional component
+function Component(){
+   // 3. return JSX to descr. the component
+   return (
+          <div>
+               <h1>hello world</h1>
+          </div>
+   )
+}
+
+// 4. export the component to make it available
+export default Component
+

@@ -1,0 +1,24 @@
+- свойство не будет обновляться средствами реакт
+
+import React from "reac"
+
+// stateless example
+function ComponentState(){
+   int count = 0;  <- initial state
+   const increment = () => {
+         count += 1;
+         console.log("count: ${count})
+   }
+}
+
+return (
+       <div>
+       <- не обновиться
+       <- но отобразиться
+            <p>count {count}</p>
+            <- в консоли увидим однако действие
+            <button onClick={increment}>click</button>
+       </div>
+)
+
+export default ComponentState

@@ -1,0 +1,7 @@
+index.html <- single page for react app
+component.js <- component
+App.js <- main component
+App.test.js <- test for App component
+index.module.css <- generative Css
+index.css <- common css
+index.js <- entry point for React App component

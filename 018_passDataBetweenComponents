@@ -1,0 +1,28 @@
+function App(){
+   return (
+      <>
+         <ChildComponents name="happy" purpose="some">
+      </>
+   )
+}
+
+function ChildComponent(props){
+         return <div>{props.name}</div>
+}
+
+function ChildComponent({name,purpose}){
+  return <div>{name}</div><div>{purpose}</div>
+}
+
+// prop drilling
+function PropParent(){
+  return (<PropChild message={"data"}/>)
+}
+
+function PropChild({message}){
+  return (<PropGrandChild message={message}>)
+}
+
+function PropGrandChild({message}){
+  return (<div>{message}</div>)
+}
